@@ -1092,3 +1092,106 @@ body.lite-mode button {
 .footer-disabled:hover {
     color: var(--text-muted);
 }
+
+/* ===================================================================
+   MOBILE RESPONSIVE
+   =================================================================== */
+
+@media (max-width: 768px) {
+
+    /* Show hamburger on LEFT */
+    .main-nav {
+        flex-direction: row;
+        padding: 0 var(--space-sm);
+    }
+
+    .nav-toggle {
+        display: flex;
+        order: -1;
+    }
+
+    .nav-logo {
+        order: 0;
+        margin: 0 auto;
+    }
+
+    .perf-toggle {
+        order: 1;
+        margin-left: 0;
+    }
+
+    /* Mobile menu dropdown */
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: var(--nav-height);
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background: rgba(10, 10, 15, 0.97);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        padding: var(--space-md) 0;
+        gap: 0;
+        border-bottom: 1px solid rgba(212, 168, 83, 0.15);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: var(--space-sm) var(--space-md);
+        font-size: var(--fs-body);
+    }
+
+    .nav-links a::after {
+        display: none;
+    }
+
+    /* Compact sidebar on mobile */
+    .community-sidebar {
+        top: auto;
+        bottom: var(--space-sm);
+        transform: none;
+        gap: 4px;
+    }
+
+    .community-sidebar .sidebar-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 14px;
+    }
+
+    .community-sidebar .tooltip {
+        display: none;
+    }
+
+    /* Reduce section padding */
+    .section {
+        padding: var(--space-lg) 0;
+    }
+
+    .container {
+        padding: 0 var(--space-sm);
+    }
+
+    /* Footer responsive */
+    .footer-content {
+        flex-direction: column;
+        gap: var(--space-md);
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: var(--space-sm);
+        text-align: center;
+    }
+}
