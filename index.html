@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="The Ascension — A premium tribute to Zyzz, the Father of Aesthetics. Explore his legacy, training philosophy, and the 'We're All Gonna Make It' movement.">
+    <title>ZYZZ — The Ascension</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/home.css">
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Page Loader -->
+    <div class="page-loader">
+        <div class="loader-text">ZYZZ</div>
+    </div>
+
+    <!-- Custom Cursor (injected by JS) -->
+
+    <!-- Navigation -->
+    <nav class="main-nav" id="main-nav">
+        <a href="index.html" class="nav-logo">
+            <span>ZY</span>ZZ
+        </a>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="mythos.html">The Mythos</a></li>
+            <li><a href="blueprint.html">The Blueprint</a></li>
+            <li><a href="vault.html">The Vault</a></li>
+            <li><a href="audio.html">The Audio</a></li>
+        </ul>
+        <div class="perf-toggle" id="perf-toggle" title="Toggle Lite Mode for better performance">
+            <span class="toggle-label">Lite</span>
+            <div class="toggle-switch"></div>
+        </div>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- Community Hub Sidebar -->
+    <aside class="community-sidebar">
+        <a href="https://reddit.com/r/zyzzlegacy" target="_blank" class="sidebar-icon" aria-label="Reddit">
+            <i class="fa-brands fa-reddit-alien"></i>
+            <span class="tooltip">r/zyzzlegacy</span>
+        </a>
+        <a href="#" class="sidebar-icon" aria-label="Discord">
+            <i class="fa-brands fa-discord"></i>
+            <span class="tooltip">Under Construction</span>
+        </a>
+        <a href="https://www.youtube.com/@7zyzz765/" target="_blank" class="sidebar-icon" aria-label="YouTube">
+            <i class="fa-brands fa-youtube"></i>
+            <span class="tooltip">YouTube</span>
+        </a>
+    </aside>
+
+    <!-- ===================== HERO SECTION ===================== -->
+    <section class="hero" id="hero">
+        <div class="hero-media">
+            <!-- Video placeholder — replace src with actual video -->
+            <video class="hero-video" autoplay muted loop playsinline poster="assets/images/hero_poster.png">
+                <!-- <source src="assets/video/hero.mp4" type="video/mp4"> -->
+            </video>
+            <img src="assets/images/hero_poster.png" alt="Zyzz silhouette" class="hero-fallback" style="display:block;">
+        </div>
+
+        <!-- VHS Filter Overlay -->
+        <div class="vhs-overlay">
+            <div class="chroma-r"></div>
+            <div class="chroma-b"></div>
+        </div>
+        <div class="glitch-bar"></div>
+
+        <!-- Dark Gradient -->
+        <div class="hero-gradient"></div>
+
+        <!-- Hero Content -->
+        <div class="hero-content">
+            <span class="hero-tag">The Father of Aesthetics</span>
+            <h1 class="hero-title">
+                THE <span class="gold">ASCENSION</span>
+            </h1>
+            <p class="hero-subtitle">We're All Gonna Make It, Brahs</p>
+            <div class="hero-cta">
+                <a href="mythos.html" class="btn btn-gold">
+                    <i class="fa-solid fa-scroll"></i>
+                    Discover The Mythos
+                </a>
+                <a href="blueprint.html" class="btn btn-outline">
+                    <i class="fa-solid fa-dumbbell"></i>
+                    The Blueprint
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- ===================== PARALLAX QUOTES ===================== -->
+    <section class="parallax-quotes">
+        <div class="parallax-quote">
+            <div class="quote-glow gold" style="top: -100px; left: -100px;"></div>
+            <p class="quote-text">
+                "We're all gonna <span class="highlight">make it</span>, brah."
+            </p>
+            <span class="quote-author">— Zyzz</span>
+        </div>
+
+        <div class="parallax-quote">
+            <div class="quote-glow cyan" style="top: -50px; right: -100px;"></div>
+            <p class="quote-text">
+                "U <span class="highlight">mirin'</span>?"
+            </p>
+            <span class="quote-author">— Zyzz</span>
+        </div>
+
+        <div class="parallax-quote">
+            <div class="quote-glow gold" style="bottom: -100px; left: 30%;"></div>
+            <p class="quote-text">
+                "Everybody has a little bit of <span class="highlight">Zyzz</span> in them."
+            </p>
+            <span class="quote-author">— Aziz Shavershian</span>
+        </div>
+
+        <div class="parallax-quote">
+            <div class="quote-glow cyan" style="top: 0; right: 20%;"></div>
+            <p class="quote-text">
+                "<span class="highlight">Veni, Vidi, Vici.</span>"
+            </p>
+            <span class="quote-author">— The Aesthetic Creed</span>
+        </div>
+    </section>
+
+    <!-- ===================== WAGMI MANIFESTO ===================== -->
+    <section class="manifesto section" id="manifesto">
+        <div class="container">
+            <div class="manifesto-grid">
+                <div class="manifesto-text animate-in">
+                    <div class="section-tag" style="display:inline-block; margin-bottom: 1rem;">The Manifesto</div>
+                    <h2>We're All Gonna <span class="gold">Make It</span></h2>
+                    <div class="manifesto-body">
+                        <p>
+                            Zyzz wasn't just a bodybuilder. He was a movement. A skinny kid from
+                            Sydney who played World of Warcraft all day, he discovered the gym and
+                            transformed — not just his body, but his entire existence. He became
+                            the living embodiment of the idea that <strong>anyone can change</strong>.
+                        </p>
+                        <p>
+                            His philosophy was simple: stop caring what people think, get in the
+                            gym, eat clean, blast hardstyle, and become a <em>sick kunt</em>.
+                            He didn't sell programs or peddle supplements. He sold a
+                            <strong>feeling</strong> — the feeling that no matter who you are
+                            or where you started, the aesthetic life is within reach.
+                        </p>
+                    </div>
+                    <blockquote>
+                        "The universe grants its greatest rewards to those who have the
+                        courage to act on their deepest desires."
+                    </blockquote>
+                    <a href="mythos.html" class="btn btn-gold">
+                        <i class="fa-solid fa-book-open"></i>
+                        Read the Full Story
+                    </a>
+                </div>
+                <div class="manifesto-image animate-in" style="transition-delay: 200ms;">
+                    <img src="assets/gallery/iconic/malo_tebya.jpg" alt="The Legend" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ===================== LEGACY TIMER ===================== -->
+    <section class="legacy-section section" id="legacy-timer">
+        <div class="container">
+            <div class="section-header animate-in">
+                <span class="section-tag">Legacy Counter</span>
+                <h2>Days Since The <span class="text-gold text-glow">Legend</span> Started</h2>
+                <div class="section-line"></div>
+                <p>The transformation that changed the fitness world forever began in June 2007.</p>
+            </div>
+
+            <div class="timer-grid legacy-timer animate-in">
+                <div class="timer-unit">
+                    <span class="timer-value" data-timer="days">0</span>
+                    <span class="timer-label">Days</span>
+                </div>
+                <span class="timer-separator">:</span>
+                <div class="timer-unit">
+                    <span class="timer-value" data-timer="hours">00</span>
+                    <span class="timer-label">Hours</span>
+                </div>
+                <span class="timer-separator">:</span>
+                <div class="timer-unit">
+                    <span class="timer-value" data-timer="minutes">00</span>
+                    <span class="timer-label">Minutes</span>
+                </div>
+                <span class="timer-separator">:</span>
+                <div class="timer-unit">
+                    <span class="timer-value" data-timer="seconds">00</span>
+                    <span class="timer-label">Seconds</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ===================== QUICK LINKS ===================== -->
+    <section class="quick-links section" id="explore">
+        <div class="container">
+            <div class="section-header animate-in">
+                <span class="section-tag">Explore</span>
+                <h2>The <span class="text-gold text-glow">Zyzz-Verse</span></h2>
+                <div class="section-line"></div>
+                <p>Dive deeper into the legacy. Every aspect of the aesthetic life, curated and preserved.</p>
+            </div>
+
+            <div class="links-grid">
+                <a href="mythos.html" class="link-card animate-in stagger-child">
+                    <div class="card-icon"><i class="fa-solid fa-scroll"></i></div>
+                    <h3>The Mythos</h3>
+                    <p>From Aziz to Zyzz. The complete biography of the transformation that started a movement.</p>
+                    <i class="fa-solid fa-arrow-right card-arrow"></i>
+                </a>
+
+                <a href="blueprint.html" class="link-card animate-in stagger-child">
+                    <div class="card-icon"><i class="fa-solid fa-dumbbell"></i></div>
+                    <h3>The Blueprint</h3>
+                    <p>His training splits, diet philosophy, and the principles behind the aesthetic physique.</p>
+                    <i class="fa-solid fa-arrow-right card-arrow"></i>
+                </a>
+
+                <a href="vault.html" class="link-card animate-in stagger-child">
+                    <div class="card-icon"><i class="fa-solid fa-images"></i></div>
+                    <h3>The Vault</h3>
+                    <p>High-res photos, rare clips, and restored YouTube uploads. The complete media archive.</p>
+                    <i class="fa-solid fa-arrow-right card-arrow"></i>
+                </a>
+
+                <a href="audio.html" class="link-card animate-in stagger-child">
+                    <div class="card-icon"><i class="fa-solid fa-headphones"></i></div>
+                    <h3>The Audio</h3>
+                    <p>Phonk, hardstyle, and the playlists that fueled the aesthetic lifestyle. Stream now.</p>
+                    <i class="fa-solid fa-arrow-right card-arrow"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>ZYZZ</h3>
+                <p>A tribute to Aziz Sergeyevich Shavershian (1989–2011). The Father of Aesthetics. Forever mirin'.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navigate</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="mythos.html">The Mythos</a></li>
+                    <li><a href="blueprint.html">The Blueprint</a></li>
+                    <li><a href="vault.html">The Vault</a></li>
+                    <li><a href="audio.html">The Audio</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Community</h4>
+                <ul>
+                    <li><span class="footer-disabled">Discord (Under Construction)</span></li>
+                    <li><a href="https://reddit.com/r/zyzzlegacy" target="_blank">Reddit</a></li>
+                    <li><span class="footer-disabled">Forum (Under Construction)</span></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legacy</h4>
+                <ul>
+                    <li><a href="https://www.youtube.com/@7zyzz765/" target="_blank">Original YouTube</a></li>
+                    <li><a href="https://www.youtube.com/@chestbrah.official/videos" target="_blank">Chestbrah
+                            Channel</a></li>
+                    <li><span class="footer-disabled">Fan Tributes (Under Construction)</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 The Ascension — A Fan Tribute. Not affiliated with any official entity.</p>
+            <div class="footer-socials">
+                <a href="https://www.instagram.com/zyzzforeverr/" target="_blank" aria-label="Instagram"><i
+                        class="fa-brands fa-instagram"></i></a>
+                <a href="#" aria-label="X (Twitter)" title="Under Construction"><i
+                        class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" aria-label="YouTube" title="Under Construction"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#" aria-label="TikTok" title="Under Construction"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/hero.js"></script>
+    <script src="js/parallax.js"></script>
+</body>
+
+</html>

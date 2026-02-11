@@ -1,0 +1,158 @@
+[
+  {
+    "src": "assets/gallery/Iconic/aziz.png",
+    "type": "image",
+    "category": "iconic",
+    "caption": "Aziz"
+  },
+  {
+    "src": "assets/gallery/Iconic/Brothers.jpg",
+    "type": "image",
+    "category": "iconic",
+    "caption": "Brothers"
+  },
+  {
+    "src": "assets/gallery/Iconic/flexin.jpg",
+    "type": "image",
+    "category": "iconic",
+    "caption": "Flexin"
+  },
+  {
+    "src": "assets/gallery/Iconic/flying.png",
+    "type": "image",
+    "category": "iconic",
+    "caption": "Flying"
+  },
+  {
+    "src": "assets/gallery/Iconic/fuark.jpg",
+    "type": "image",
+    "category": "iconic",
+    "caption": "Fuark"
+  },
+  {
+    "src": "assets/gallery/Iconic/Gold's.jpg",
+    "type": "image",
+    "category": "iconic",
+    "caption": "Gold'S"
+  },
+  {
+    "src": "assets/gallery/Iconic/greatest.png",
+    "type": "image",
+    "category": "iconic",
+    "caption": "Greatest"
+  },
+  {
+    "src": "assets/gallery/Iconic/hero_poster.png",
+    "type": "image",
+    "category": "iconic",
+    "caption": "Hero Poster"
+  },
+  {
+    "src": "assets/gallery/Iconic/malo_tebya.jpg",
+    "type": "image",
+    "category": "iconic",
+    "caption": "Malo Tebya"
+  },
+  {
+    "src": "assets/gallery/Iconic/Miring'.jpg",
+    "type": "image",
+    "category": "iconic",
+    "caption": "Miring'"
+  },
+  {
+    "src": "assets/gallery/Iconic/posin.png",
+    "type": "image",
+    "category": "iconic",
+    "caption": "Posin"
+  },
+  {
+    "src": "assets/gallery/Iconic/VeniVidiVici.jpg",
+    "type": "image",
+    "category": "iconic",
+    "caption": "VeniVidiVici"
+  },
+  {
+    "src": "assets/gallery/Iconic/Winger.jpg",
+    "type": "image",
+    "category": "iconic",
+    "caption": "Winger"
+  },
+  {
+    "src": "assets/gallery/Iconic/zyzz-iconic-photo.jpg",
+    "type": "image",
+    "category": "iconic",
+    "caption": "Zyzz Iconic Photo"
+  },
+  {
+    "src": "assets/gallery/Iconic/Zyzz.png",
+    "type": "image",
+    "category": "iconic",
+    "caption": "Zyzz"
+  },
+  {
+    "src": "assets/gallery/Gym/elevator.jpg",
+    "type": "image",
+    "category": "gym",
+    "caption": "Elevator"
+  },
+  {
+    "src": "assets/gallery/Gym/Lats.jpg",
+    "type": "image",
+    "category": "gym",
+    "caption": "Lats"
+  },
+  {
+    "src": "assets/gallery/Gym/pitbull.jpg",
+    "type": "image",
+    "category": "gym",
+    "caption": "Pitbull"
+  },
+  {
+    "src": "assets/gallery/Gym/screaming_zyzz.png",
+    "type": "image",
+    "category": "gym",
+    "caption": "Screaming Zyzz"
+  },
+  {
+    "src": "assets/gallery/Gym/toilet_zyzz.jpg",
+    "type": "image",
+    "category": "gym",
+    "caption": "Toilet Zyzz"
+  },
+  {
+    "src": "assets/gallery/Festival/blonde.jpg",
+    "type": "image",
+    "category": "festival",
+    "caption": "Blonde"
+  },
+  {
+    "src": "assets/gallery/Festival/FLEX.jpg",
+    "type": "image",
+    "category": "festival",
+    "caption": "FLEX"
+  },
+  {
+    "src": "assets/gallery/Festival/sickkunt.png",
+    "type": "image",
+    "category": "festival",
+    "caption": "Sickkunt"
+  },
+  {
+    "src": "assets/gallery/Festival/sweetie.jpg",
+    "type": "image",
+    "category": "festival",
+    "caption": "Sweetie"
+  },
+  {
+    "src": "assets/gallery/Festival/yeyeye.jpg",
+    "type": "image",
+    "category": "festival",
+    "caption": "Yeyeye"
+  },
+  {
+    "src": "assets/gallery/Transformation/zyzz-transformation.png",
+    "type": "image",
+    "category": "transformation",
+    "caption": "Zyzz Transformation"
+  }
+]

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="The Vault — High-res photos, rare clips, restored YouTube uploads, and fan art. The complete Zyzz media archive.">
+    <title>The Vault — ZYZZ</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <link rel="manifest" href="manifest.json">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/vault.css">
+</head>
+
+<body>
+
+    <!-- Page Loader -->
+    <div class="page-loader">
+        <div class="loader-text">THE VAULT</div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <a href="index.html" class="nav-logo"><span>ZY</span>ZZ</a>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="mythos.html">The Mythos</a></li>
+            <li><a href="blueprint.html">The Blueprint</a></li>
+            <li><a href="vault.html" class="active">The Vault</a></li>
+            <li><a href="audio.html">The Audio</a></li>
+        </ul>
+        <div class="perf-toggle" id="perf-toggle" title="Toggle Lite Mode for better performance">
+            <span class="toggle-label">Lite</span>
+            <div class="toggle-switch"></div>
+        </div>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- Community Sidebar -->
+    <aside class="community-sidebar">
+        <a href="https://reddit.com/r/zyzzlegacy" target="_blank" class="sidebar-icon"><i
+                class="fa-brands fa-reddit-alien"></i><span class="tooltip">r/zyzzlegacy</span></a>
+        <a href="#" class="sidebar-icon"><i class="fa-brands fa-discord"></i><span class="tooltip">Under
+                Construction</span></a>
+        <a href="https://www.youtube.com/@7zyzz765/" target="_blank" class="sidebar-icon"><i
+                class="fa-brands fa-youtube"></i><span class="tooltip">YouTube</span></a>
+    </aside>
+
+    <!-- ===================== PAGE HEADER ===================== -->
+    <section class="vault-hero">
+        <div class="vault-hero-content animate-in">
+            <span class="page-tag">Media Archive</span>
+            <h1>The <span class="gold">Vault</span></h1>
+            <p class="subtitle">High-resolution photos, rare clips, and restored YouTube uploads. Every moment
+                preserved.</p>
+        </div>
+    </section>
+
+    <!-- ===================== PHOTO GALLERY ===================== -->
+    <section class="gallery-section section">
+        <div class="container">
+            <div class="section-header animate-in">
+                <span class="section-tag">Gallery</span>
+                <h2>The <span class="text-gold text-glow">Collection</span></h2>
+                <div class="section-line"></div>
+            </div>
+
+            <!-- Filter Tabs -->
+            <div class="filter-tabs animate-in">
+                <button class="filter-tab active" data-filter="all">All</button>
+                <button class="filter-tab" data-filter="iconic">Iconic</button>
+                <button class="filter-tab" data-filter="gym">Gym</button>
+                <button class="filter-tab" data-filter="festival">Festival</button>
+                <button class="filter-tab" data-filter="transformation">Transformation</button>
+            </div>
+        </div>
+
+        <!-- Masonry Grid -->
+        <div class="masonry-grid">
+            <!-- Items loaded dynamically from data/gallery.json -->
+        </div>
+        </div>
+    </section>
+
+    <!-- Video Thumbnail Styles -->
+    <style>
+        .video-thumbnail {
+            position: relative;
+            width: 100%;
+            display: block;
+        }
+
+        .video-thumbnail video {
+            width: 100%;
+            height: auto;
+            display: block;
+            filter: grayscale(20%) contrast(1.1);
+            transition: transform 0.5s ease, filter 0.5s ease;
+        }
+
+        .masonry-item:hover .video-thumbnail video {
+            transform: scale(1.05);
+            filter: grayscale(0%) contrast(1.15);
+        }
+
+        .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+            background: rgba(0, 0, 0, 0.6);
+            border: 2px solid var(--accent-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-gold);
+            font-size: 1.2rem;
+            pointer-events: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(212, 168, 83, 0.4);
+            z-index: 5;
+        }
+
+        .masonry-item:hover .play-icon {
+            background: var(--accent-gold);
+            color: var(--bg-primary);
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+    </style>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close"><i class="fa-solid fa-xmark"></i></button>
+            <button class="lightbox-nav lightbox-prev"><i class="fa-solid fa-chevron-left"></i></button>
+            <img src="" alt="" class="lightbox-img">
+            <button class="lightbox-nav lightbox-next"><i class="fa-solid fa-chevron-right"></i></button>
+            <p class="lightbox-caption"></p>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ===================== YOUTUBE ARCHIVE ===================== -->
+    <section class="archive-section section" id="archive">
+        <div class="container">
+            <div class="section-header animate-in">
+                <span class="section-tag">The Archive</span>
+                <h2>YouTube <span class="text-gold text-glow">Originals</span></h2>
+                <div class="section-line"></div>
+                <p>The original uploads that started it all. Curated and restored to the best possible quality.</p>
+            </div>
+
+            <div class="archive-grid">
+                <div class="archive-card animate-in">
+                    <div class="video-embed">
+                        <iframe src="https://www.youtube.com/embed/AdBoybKnzZw" title="Zyzz - The Legacy" loading="lazy"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3>Zyzz — The Legacy</h3>
+                        <p>The definitive tribute video. The transformation, the lifestyle, the legend.</p>
+                        <div class="video-meta">
+                            <span>Tribute</span>
+                            <span>HD Remaster</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="archive-card animate-in" style="transition-delay: 100ms;">
+                    <div class="video-embed">
+                        <iframe src="https://www.youtube.com/embed/4aDlftN3Nt0" title="The Zyzz Story" loading="lazy"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3>The Zyzz Story</h3>
+                        <p>From skinny WoW player to the King of Aesthetics. The full documentary.</p>
+                        <div class="video-meta">
+                            <span>Documentary</span>
+                            <span>Must Watch</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="archive-card animate-in" style="transition-delay: 200ms;">
+                    <div class="video-embed">
+                        <iframe src="https://www.youtube.com/embed/WPAyj4ShbZA" title="Zyzz Hardstyle Compilation"
+                            loading="lazy"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3>Hardstyle Heaven</h3>
+                        <p>Zyzz at festivals, shredded and living the aesthetic dream. Pure energy.</p>
+                        <div class="video-meta">
+                            <span>Festival</span>
+                            <span>Fan Edit</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="archive-card animate-in" style="transition-delay: 300ms;">
+                    <div class="video-embed">
+                        <iframe src="https://www.youtube.com/embed/ZulSyX3bYKM" title="Zyzz Motivation" loading="lazy"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3>U Mirin' Brah?</h3>
+                        <p>The ultimate motivation compilation. For those days when you need that push.</p>
+                        <div class="video-meta">
+                            <span>Motivation</span>
+                            <span>Classic</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="archive-card animate-in" style="transition-delay: 400ms;">
+                    <div class="video-embed">
+                        <iframe src="https://www.youtube.com/embed/ToNLrthvFsE" title="Zyzz Transformation"
+                            loading="lazy"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3>The Transformation</h3>
+                        <p>Skinny to shredded. The before-and-after that inspired millions.</p>
+                        <div class="video-meta">
+                            <span>Transformation</span>
+                            <span>Inspiring</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="archive-card animate-in" style="transition-delay: 500ms;">
+                    <div class="video-embed">
+                        <iframe src="https://www.youtube.com/embed/rpvNEv9jE20" title="Chestbrah for Zyzz"
+                            loading="lazy"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3>Brother's Tribute</h3>
+                        <p>Chestbrah carrying the legacy forward. For his brother, for the movement.</p>
+                        <div class="video-meta">
+                            <span>Chestbrah</span>
+                            <span>Tribute</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>ZYZZ</h3>
+                <p>A tribute to Aziz Sergeyevich Shavershian (1989–2011). The Father of Aesthetics. Forever mirin'.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navigate</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="mythos.html">The Mythos</a></li>
+                    <li><a href="blueprint.html">The Blueprint</a></li>
+                    <li><a href="vault.html">The Vault</a></li>
+                    <li><a href="audio.html">The Audio</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Community</h4>
+                <ul>
+                    <li><span class="footer-disabled">Discord (Under Construction)</span></li>
+                    <li><a href="https://reddit.com/r/zyzzlegacy" target="_blank">Reddit</a></li>
+                    <li><span class="footer-disabled">Forum (Under Construction)</span></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legacy</h4>
+                <ul>
+                    <li><a href="https://www.youtube.com/@7zyzz765/" target="_blank">Original YouTube</a></li>
+                    <li><a href="https://www.youtube.com/@chestbrah.official/videos" target="_blank">Chestbrah
+                            Channel</a></li>
+                    <li><span class="footer-disabled">Fan Tributes (Under Construction)</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 The Ascension — A Fan Tribute.</p>
+            <div class="footer-socials">
+                <a href="https://www.instagram.com/zyzzforeverr/" target="_blank" aria-label="Instagram"><i
+                        class="fa-brands fa-instagram"></i></a>
+                <a href="#" aria-label="X (Twitter)" title="Under Construction"><i
+                        class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" aria-label="YouTube" title="Under Construction"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#" aria-label="TikTok" title="Under Construction"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/gallery.js"></script>
+</body>
+
+</html>

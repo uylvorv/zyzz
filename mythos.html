@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="The Mythos — The complete biography of Zyzz. From skinny WoW player to the Father of Aesthetics. His story, his stats, his legacy.">
+    <title>The Mythos — ZYZZ</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <link rel="manifest" href="manifest.json">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/mythos.css">
+</head>
+
+<body>
+
+    <!-- Page Loader -->
+    <div class="page-loader">
+        <div class="loader-text">THE MYTHOS</div>
+    </div>
+
+    <!-- 3D Canvas Background -->
+    <div id="three-canvas"></div>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <a href="index.html" class="nav-logo"><span>ZY</span>ZZ</a>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="mythos.html" class="active">The Mythos</a></li>
+            <li><a href="blueprint.html">The Blueprint</a></li>
+            <li><a href="vault.html">The Vault</a></li>
+            <li><a href="audio.html">The Audio</a></li>
+        </ul>
+        <div class="perf-toggle" id="perf-toggle" title="Toggle Lite Mode for better performance">
+            <span class="toggle-label">Lite</span>
+            <div class="toggle-switch"></div>
+        </div>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- Community Sidebar -->
+    <aside class="community-sidebar">
+        <a href="https://reddit.com/r/zyzzlegacy" target="_blank" class="sidebar-icon"><i
+                class="fa-brands fa-reddit-alien"></i><span class="tooltip">r/zyzzlegacy</span></a>
+        <a href="#" class="sidebar-icon"><i class="fa-brands fa-discord"></i><span class="tooltip">Under
+                Construction</span></a>
+        <a href="https://www.youtube.com/@7zyzz765/" target="_blank" class="sidebar-icon"><i
+                class="fa-brands fa-youtube"></i><span class="tooltip">YouTube</span></a>
+    </aside>
+
+    <!-- ===================== PAGE HEADER ===================== -->
+    <section class="mythos-hero">
+        <div class="mythos-hero-content animate-in">
+            <span class="page-tag">Biography</span>
+            <h1>The <span class="gold">Mythos</span></h1>
+            <p class="subtitle">From Aziz Sergeyevich Shavershian to the immortal legend known as Zyzz. This is the
+                story of the greatest transformation in fitness history.</p>
+        </div>
+    </section>
+
+    <!-- ===================== CHARACTER STATS ===================== -->
+    <section class="stats-section section">
+        <div class="container">
+            <div class="section-header animate-in">
+                <span class="section-tag">Character Select</span>
+                <h2>The <span class="text-gold text-glow">Aesthetic</span> Profile</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="stats-container">
+                <!-- Character Card -->
+                <div class="character-card animate-in">
+                    <div class="character-card-header">
+                        <span class="char-name">ZYZZ</span>
+                        <span class="char-class">Aesthetic God</span>
+                    </div>
+                    <div class="character-card-body">
+                        <img src="assets/gallery/Iconic/zyzz.png" alt="Zyzz Profile" class="character-card-image"
+                            loading="lazy">
+
+                        <div class="stat-row">
+                            <span class="stat-label">Strength</span>
+                            <div class="stat-bar-container">
+                                <div class="stat-bar strength" data-width="78%"></div>
+                            </div>
+                            <span class="stat-value" data-target="78">0</span>
+                        </div>
+
+                        <div class="stat-row">
+                            <span class="stat-label">Aesthetics</span>
+                            <div class="stat-bar-container">
+                                <div class="stat-bar aesthetics" data-width="99%"></div>
+                            </div>
+                            <span class="stat-value" data-target="99">0</span>
+                        </div>
+
+                        <div class="stat-row">
+                            <span class="stat-label">Charisma</span>
+                            <div class="stat-bar-container">
+                                <div class="stat-bar charisma" data-width="95%"></div>
+                            </div>
+                            <span class="stat-value" data-target="95">0</span>
+                        </div>
+
+                        <div class="stat-row">
+                            <span class="stat-label">Discipline</span>
+                            <div class="stat-bar-container">
+                                <div class="stat-bar discipline" data-width="88%"></div>
+                            </div>
+                            <span class="stat-value" data-target="88">0</span>
+                        </div>
+
+                        <div class="stat-row">
+                            <span class="stat-label">Legacy</span>
+                            <div class="stat-bar-container">
+                                <div class="stat-bar legacy" data-width="100%"></div>
+                            </div>
+                            <span class="stat-value" data-target="100">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Physical Stats -->
+                <div class="physical-stats animate-in" style="transition-delay: 200ms;">
+                    <div class="physical-stat">
+                        <div class="stat-number" data-target="6" data-suffix="'1\"" data-decimals=" 0">0</div>
+                        <div class="stat-desc">Height</div>
+                    </div>
+                    <div class="physical-stat">
+                        <div class="stat-number" data-target="205" data-suffix=" lbs" data-decimals="0">0</div>
+                        <div class="stat-desc">Peak Weight</div>
+                    </div>
+                    <div class="physical-stat">
+                        <div class="stat-number" data-target="7.5" data-suffix="%" data-decimals="1">0</div>
+                        <div class="stat-desc">Body Fat</div>
+                    </div>
+                    <div class="physical-stat">
+                        <div class="stat-number" data-target="22" data-decimals="0">0</div>
+                        <div class="stat-desc">Age At Peak</div>
+                    </div>
+                    <div class="physical-stat">
+                        <div class="stat-number" data-target="120" data-suffix=" kg" data-decimals="0">0</div>
+                        <div class="stat-desc">Bench PR</div>
+                    </div>
+                    <div class="physical-stat">
+                        <div class="stat-number" data-target="3" data-suffix=" yrs" data-decimals="0">0</div>
+                        <div class="stat-desc">Transform Time</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ===================== TIMELINE ===================== -->
+    <section class="timeline-section section">
+        <div class="container">
+            <div class="section-header animate-in">
+                <span class="section-tag">Timeline</span>
+                <h2>The <span class="text-gold text-glow">Journey</span></h2>
+                <div class="section-line"></div>
+                <p>Every legend has a beginning. This is the story of the transformation
+                    that changed the fitness world forever.</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item animate-in">
+                    <div class="timeline-year">1989</div>
+                    <h3 class="timeline-title">Born in Moscow</h3>
+                    <p class="timeline-desc">Aziz Sergeyevich Shavershian is born on March 24, 1989 in Moscow, Russia.
+                        His family would later emigrate to Australia, settling in Sydney.</p>
+                </div>
+
+                <div class="timeline-item animate-in">
+                    <div class="timeline-year">2004</div>
+                    <h3 class="timeline-title">The WoW Era</h3>
+                    <p class="timeline-desc">A skinny 15-year-old, Aziz spends his days playing World of Warcraft. At
+                        just 120 lbs, he's self-conscious about his appearance. His brother Said (Chestbrah) begins
+                        training, planting the first seed of change.</p>
+                </div>
+
+                <div class="timeline-item animate-in">
+                    <div class="timeline-year">2007</div>
+                    <h3 class="timeline-title">The Awakening</h3>
+                    <p class="timeline-desc">Inspired by his brother and the bodybuilding forums (Misc), Aziz picks up
+                        his first barbell. The transformation begins. He discovers that the gym is not just about the
+                        body — it's about the mind.</p>
+                </div>
+
+                <div class="timeline-item animate-in">
+                    <div class="timeline-year">2008</div>
+                    <h3 class="timeline-title">The Metamorphosis</h3>
+                    <p class="timeline-desc">Just one year in, the results are staggering. His body begins to take
+                        shape. The former WoW addict starts turning heads. He creates the persona "Zyzz" — a character
+                        larger than life itself.</p>
+                </div>
+
+                <div class="timeline-item animate-in">
+                    <div class="timeline-year">2009</div>
+                    <h3 class="timeline-title">The Rise</h3>
+                    <p class="timeline-desc">Zyzz uploads his first YouTube videos. The charisma, the confidence, the
+                        physique — everything is magnetic. "U mirin, brah?" becomes the catchphrase of a generation. The
+                        Aesthetics Crew is born.</p>
+                </div>
+
+                <div class="timeline-item animate-in">
+                    <div class="timeline-year">2010</div>
+                    <h3 class="timeline-title">Peak Aesthetics</h3>
+                    <p class="timeline-desc">At 21, Zyzz reaches his peak physique. He becomes the face of aesthetic
+                        bodybuilding. The festivals, the hardstyle, the shredded physique under strobe lights — he's
+                        living the life he preached. His YouTube videos inspire millions worldwide.</p>
+                </div>
+
+                <div class="timeline-item animate-in">
+                    <div class="timeline-year">2011</div>
+                    <h3 class="timeline-title">The Legend Solidifies</h3>
+                    <p class="timeline-desc">Zyzz continues to grow his following. He releases training videos, attends
+                        events, and becomes an icon. His message is clear: no matter who you are, you can transform
+                        yourself. "We're all gonna make it."</p>
+                </div>
+
+                <div class="timeline-item memorial animate-in">
+                    <div class="timeline-year">Aug 5, 2011</div>
+                    <h3 class="timeline-title">Forever Mirin'</h3>
+                    <p class="timeline-desc">Zyzz passes away in a sauna in Pattaya, Thailand, at just 22 years old. An
+                        undiagnosed congenital heart defect claims his life. The fitness world mourns. But legends don't
+                        die — they ascend.</p>
+                </div>
+
+                <div class="timeline-item animate-in">
+                    <div class="timeline-year">2011+</div>
+                    <h3 class="timeline-title">The Eternal Legacy</h3>
+                    <p class="timeline-desc">Zyzz's legacy only grows stronger with time. His videos continue to inspire
+                        new generations. "We're all gonna make it" becomes the anthem of self-improvement. The
+                        Aesthetics movement lives on, forever.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ===================== BIOGRAPHY TEXT ===================== -->
+    <section class="bio-section section">
+        <div class="container">
+            <div class="bio-content animate-in">
+                <h3>The Philosophy</h3>
+                <p>
+                    Zyzz didn't just change his body — he created an entirely new way of thinking about
+                    fitness and self-improvement. While the bodybuilding world was obsessed with mass
+                    monsters and powerlifting totals, Zyzz championed something different: <strong>aesthetics</strong>.
+                </p>
+                <p>
+                    His philosophy was radical in its simplicity. Stop overthinking. Stop caring about
+                    what others think. Get in the gym, train hard, eat right, and most importantly —
+                    enjoy the process. Life is too short to be a "sad kunt."
+                </p>
+
+                <div class="highlight-box">
+                    <p>"You don't need to have amazing genetics or by by a natural freak of nature.
+                        Everyone has the potential to change themselves and live the life they deserve."</p>
+                </div>
+
+                <p>
+                    He was one of the first fitness influencers before the term even existed. His
+                    YouTube videos weren't polished productions — they were raw, authentic, and
+                    brimming with genuine enthusiasm. He filmed himself at festivals, in the gym,
+                    and just living life. That authenticity is what made him resonate with millions.
+                </p>
+
+                <h3 style="margin-top: var(--space-lg);">The Impact</h3>
+                <p>
+                    More than a decade after his passing, Zyzz remains one of the most referenced
+                    figures in fitness culture. His transformation photos are shared daily on social
+                    media. His quotes have become mantras. His legacy has influenced everything from
+                    gym culture to internet memes to music festivals.
+                </p>
+                <p>
+                    Chestbrah (Said Shavershian) continues to carry the torch, keeping his brother's
+                    legacy alive through social media and personal appearances. The Zyzz community
+                    remains one of the most positive and encouraging corners of the fitness world.
+                </p>
+
+                <div class="highlight-box">
+                    <p>"ZYZZ will never die. He's more than a person — he's an idea, a movement,
+                        a reminder that anyone can transform their life if they have the courage to start."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>ZYZZ</h3>
+                <p>A tribute to Aziz Sergeyevich Shavershian (1989–2011). The Father of Aesthetics. Forever mirin'.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navigate</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="mythos.html">The Mythos</a></li>
+                    <li><a href="blueprint.html">The Blueprint</a></li>
+                    <li><a href="vault.html">The Vault</a></li>
+                    <li><a href="audio.html">The Audio</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Community</h4>
+                <ul>
+                    <li><span class="footer-disabled">Discord (Under Construction)</span></li>
+                    <li><a href="https://reddit.com/r/zyzzlegacy" target="_blank">Reddit</a></li>
+                    <li><span class="footer-disabled">Forum (Under Construction)</span></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legacy</h4>
+                <ul>
+                    <li><a href="https://www.youtube.com/@7zyzz765/" target="_blank">Original YouTube</a></li>
+                    <li><a href="https://www.youtube.com/@chestbrah.official/videos" target="_blank">Chestbrah
+                            Channel</a></li>
+                    <li><span class="footer-disabled">Fan Tributes (Under Construction)</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 The Ascension — A Fan Tribute.</p>
+            <div class="footer-socials">
+                <a href="https://www.instagram.com/zyzzforeverr/" target="_blank" aria-label="Instagram"><i
+                        class="fa-brands fa-instagram"></i></a>
+                <a href="#" aria-label="X (Twitter)" title="Under Construction"><i
+                        class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" aria-label="YouTube" title="Under Construction"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#" aria-label="TikTok" title="Under Construction"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <script src="js/main.js"></script>
+    <script src="js/three-scene.js"></script>
+    <script src="js/stats.js"></script>
+</body>
+
+</html>

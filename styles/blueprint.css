@@ -1,0 +1,450 @@
+/* ===================================================================
+   THE BLUEPRINT — Training & Philosophy
+   Accordion splits, diet cards, supplements, mindset
+   =================================================================== */
+
+/* --- Page Hero --- */
+.blueprint-hero {
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: calc(var(--nav-height) + var(--space-xl)) var(--space-md) var(--space-xl);
+    position: relative;
+    background: radial-gradient(circle at center, rgba(25, 25, 30, 0.6) 0%, transparent 70%);
+}
+
+.blueprint-hero-content {
+    max-width: 800px;
+}
+
+.blueprint-hero .page-tag {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: var(--fs-caption);
+    color: var(--accent-cyan);
+    text-transform: uppercase;
+    letter-spacing: 0.4em;
+    margin-bottom: var(--space-sm);
+    padding: 6px 20px;
+    border: 1px solid rgba(0, 229, 255, 0.3);
+    border-radius: 30px;
+}
+
+.blueprint-hero h1 {
+    font-size: var(--fs-h1);
+    margin-bottom: var(--space-sm);
+}
+
+.blueprint-hero h1 .gold {
+    color: var(--accent-gold);
+    text-shadow: var(--glow-text);
+}
+
+.blueprint-hero .subtitle {
+    font-size: var(--fs-body);
+    color: var(--text-secondary);
+    max-width: 650px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* --- Wiki Navigation Tabs --- */
+.wiki-nav {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-sm);
+    padding: var(--space-sm) var(--space-md);
+    background: var(--bg-secondary);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    position: sticky;
+    top: var(--nav-height);
+    z-index: var(--z-sticky);
+    flex-wrap: wrap;
+}
+
+.wiki-nav a {
+    font-family: var(--font-mono);
+    font-size: var(--fs-small);
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: var(--space-xs) var(--space-sm);
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.wiki-nav a:hover {
+    color: var(--text-primary);
+}
+
+.wiki-nav a.active {
+    color: var(--accent-gold);
+    border-bottom-color: var(--accent-gold);
+    text-shadow: 0 0 15px rgba(212, 168, 83, 0.3);
+}
+
+/* --- Training Section --- */
+.training-section {
+    background: var(--bg-secondary);
+}
+
+/* --- Accordion --- */
+.accordion {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.accordion-item {
+    background: rgba(15, 15, 20, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.accordion-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-md);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+}
+
+.accordion-header-left {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.day-badge {
+    font-family: var(--font-mono);
+    color: var(--accent-cyan);
+    font-size: 0.8rem;
+    border: 1px solid rgba(0, 229, 255, 0.3);
+    padding: 2px 10px;
+    border-radius: 4px;
+    white-space: nowrap;
+}
+
+.accordion-header h3 {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    margin: 0;
+    color: var(--text-secondary);
+    transition: color 0.3s ease;
+}
+
+.acc-icon {
+    font-size: 1rem;
+    color: var(--accent-gold);
+    transition: transform 0.3s ease;
+}
+
+/* Active state */
+.accordion-item.active {
+    border-color: rgba(212, 168, 83, 0.4);
+    background: rgba(20, 20, 25, 0.95);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.accordion-item.active .accordion-header h3 {
+    color: var(--accent-gold);
+    text-shadow: var(--glow-text);
+}
+
+.accordion-item.active .acc-icon {
+    transform: rotate(180deg);
+}
+
+.accordion-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+
+.accordion-item.active .accordion-body {
+    max-height: 800px;
+}
+
+.accordion-content {
+    padding: var(--space-md);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Exercise Table */
+.exercise-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.exercise-table th {
+    text-align: left;
+    font-family: var(--font-mono);
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    padding-bottom: var(--space-sm);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.exercise-table td {
+    padding: var(--space-xs) 0;
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-size: var(--fs-small);
+}
+
+.exercise-table .exercise-name {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.exercise-table tr:not(:last-child) td {
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.05);
+}
+
+.exercise-note {
+    font-size: var(--fs-small);
+    color: var(--text-muted);
+    font-style: italic;
+    margin-top: var(--space-sm);
+    padding-top: var(--space-sm);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* --- Diet Section --- */
+.diet-section {
+    background: var(--bg-primary);
+}
+
+/* Macro Bar */
+.macro-bar {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-sm);
+}
+
+.macro-label {
+    width: 70px;
+    font-family: var(--font-mono);
+    font-size: var(--fs-small);
+    color: var(--text-secondary);
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.macro-track {
+    flex: 1;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.macro-fill {
+    height: 100%;
+    border-radius: 5px;
+    transition: width 1.5s var(--ease-smooth);
+}
+
+.macro-fill.protein {
+    background: var(--accent-red);
+}
+
+.macro-fill.carbs {
+    background: var(--accent-gold);
+}
+
+.macro-fill.fats {
+    background: var(--accent-cyan);
+}
+
+.macro-value {
+    width: 40px;
+    font-family: var(--font-mono);
+    font-size: var(--fs-small);
+    color: var(--text-primary);
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+/* Diet Cards Grid */
+.diet-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-md);
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.diet-card {
+    background: linear-gradient(145deg, rgba(20, 20, 25, 0.9), rgba(15, 15, 20, 0.95));
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: var(--space-md);
+    border-radius: var(--radius-md);
+    position: relative;
+    box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.diet-card:hover {
+    border-color: rgba(212, 168, 83, 0.3);
+    box-shadow: var(--glow-gold);
+}
+
+.diet-card .card-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
+    padding-bottom: var(--space-sm);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.diet-card .card-icon {
+    font-size: 1.5rem;
+    color: var(--accent-gold);
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(212, 168, 83, 0.1);
+    border-radius: var(--radius-sm);
+    flex-shrink: 0;
+}
+
+.diet-card h3 {
+    font-size: 1.1rem;
+    color: var(--accent-gold);
+    margin: 0;
+}
+
+.diet-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.diet-card ul li {
+    padding: 6px 0;
+    font-size: var(--fs-small);
+    color: var(--text-secondary);
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.05);
+    position: relative;
+    padding-left: 16px;
+}
+
+.diet-card ul li::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: var(--accent-gold);
+    font-weight: 700;
+}
+
+.diet-card ul li:last-child {
+    border-bottom: none;
+}
+
+/* --- Supplements Section --- */
+.supps-section {
+    background: var(--bg-secondary);
+}
+
+.supps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-md);
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.supp-item {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.03);
+    padding: var(--space-md);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: var(--radius-sm);
+    transition: all 0.3s ease;
+}
+
+.supp-icon {
+    font-size: 2rem;
+    color: var(--text-muted);
+    margin-bottom: var(--space-sm);
+    transition: all 0.3s ease;
+}
+
+.supp-item h4 {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    color: var(--text-primary);
+    margin-bottom: var(--space-xs);
+}
+
+.supp-item p {
+    font-size: var(--fs-small);
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.supp-item:hover {
+    background: rgba(212, 168, 83, 0.05);
+    border-color: rgba(212, 168, 83, 0.3);
+}
+
+.supp-item:hover .supp-icon {
+    color: var(--accent-gold);
+    text-shadow: var(--glow-text);
+}
+
+/* --- Philosophy Banner --- */
+.philosophy-banner {
+    text-align: center;
+    padding: var(--space-2xl) var(--space-md);
+    background:
+        radial-gradient(ellipse at center, rgba(212, 168, 83, 0.06) 0%, transparent 70%);
+}
+
+.philosophy-banner blockquote {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-style: italic;
+    color: var(--accent-gold-light);
+    max-width: 900px;
+    margin: 0 auto var(--space-md);
+    line-height: 1.4;
+    text-shadow: 0 0 20px rgba(212, 168, 83, 0.15);
+}
+
+.philosophy-banner cite {
+    font-family: var(--font-mono);
+    font-size: var(--fs-small);
+    color: var(--text-muted);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-style: normal;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .diet-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .supps-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

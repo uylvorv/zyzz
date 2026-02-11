@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="The Audio — Phonk, hardstyle, and the playlists that powered the aesthetic lifestyle. Stream the Zyzz legacy playlists.">
+    <title>The Audio — ZYZZ</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <link rel="manifest" href="manifest.json">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/audio.css">
+</head>
+
+<body>
+
+    <!-- Page Loader -->
+    <div class="page-loader">
+        <div class="loader-text">THE AUDIO</div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <a href="index.html" class="nav-logo"><span>ZY</span>ZZ</a>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="mythos.html">The Mythos</a></li>
+            <li><a href="blueprint.html">The Blueprint</a></li>
+            <li><a href="vault.html">The Vault</a></li>
+            <li><a href="audio.html" class="active">The Audio</a></li>
+        </ul>
+        <div class="perf-toggle" id="perf-toggle" title="Toggle Lite Mode for better performance">
+            <span class="toggle-label">Lite</span>
+            <div class="toggle-switch"></div>
+        </div>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- Community Sidebar -->
+    <aside class="community-sidebar">
+        <a href="https://reddit.com/r/zyzzlegacy" target="_blank" class="sidebar-icon"><i
+                class="fa-brands fa-reddit-alien"></i><span class="tooltip">r/zyzzlegacy</span></a>
+        <a href="#" class="sidebar-icon"><i class="fa-brands fa-discord"></i><span class="tooltip">Under
+                Construction</span></a>
+        <a href="https://www.youtube.com/@7zyzz765/" target="_blank" class="sidebar-icon"><i
+                class="fa-brands fa-youtube"></i><span class="tooltip">YouTube</span></a>
+    </aside>
+
+    <!-- ===================== PAGE HEADER ===================== -->
+    <!-- Hero removed per user request to pull playlists up -->
+
+    <!-- ===================== WAVEFORM VISUAL ===================== -->
+    <div class="container" style="padding-top: calc(var(--nav-height) + var(--space-lg));">
+        <canvas id="waveform-canvas"></canvas>
+    </div>
+
+    <!-- ===================== SPOTIFY PLAYLISTS ===================== -->
+    <section class="playlists-section section">
+        <div class="container">
+            <div class="section-header animate-in">
+                <span class="section-tag">Playlists</span>
+                <h2>Legacy <span class="text-gold text-glow">Playlists</span></h2>
+                <div class="section-line"></div>
+                <p>Curated playlists for every mood. Whether you're training chest or hitting the dancefloor.</p>
+            </div>
+
+            <div class="playlists-grid">
+                <!-- Phonk Playlist -->
+                <div class="playlist-card animate-in">
+                    <div class="card-header">
+                        <div class="playlist-icon phonk"><i class="fa-solid fa-skull"></i></div>
+                        <div>
+                            <h3>Phonk Ascension</h3>
+                            <p>Dark, aggressive phonk for heavy lifting sessions</p>
+                        </div>
+                    </div>
+                    <div class="spotify-embed">
+                        <iframe style="border-radius:12px"
+                            src="https://open.spotify.com/embed/playlist/37i9dQZF1DWWY64wDtewQt?utm_source=generator&theme=0"
+                            height="352" frameBorder="0" allowfullscreen
+                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                            loading="lazy"></iframe>
+                    </div>
+                </div>
+
+                <!-- Hardstyle Playlist -->
+                <div class="playlist-card animate-in" style="transition-delay: 100ms;">
+                    <div class="card-header">
+                        <div class="playlist-icon hardstyle"><i class="fa-solid fa-bolt-lightning"></i></div>
+                        <div>
+                            <h3>Hardstyle Heaven</h3>
+                            <p>Festival-grade hardstyle. Go full Zyzz mode.</p>
+                        </div>
+                    </div>
+                    <div class="spotify-embed">
+                        <iframe style="border-radius:12px"
+                            src="https://open.spotify.com/embed/playlist/37i9dQZF1DX0pH2SQMRXnC?utm_source=generator&theme=0"
+                            height="352" frameBorder="0" allowfullscreen
+                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                            loading="lazy"></iframe>
+                    </div>
+                </div>
+
+                <!-- Gym Playlist -->
+                <div class="playlist-card animate-in" style="transition-delay: 200ms;">
+                    <div class="card-header">
+                        <div class="playlist-icon gym"><i class="fa-solid fa-dumbbell"></i></div>
+                        <div>
+                            <h3>Gym Aesthetics</h3>
+                            <p>The ultimate gym playlist. Heavy beats for heavy sets.</p>
+                        </div>
+                    </div>
+                    <div class="spotify-embed">
+                        <iframe style="border-radius:12px"
+                            src="https://open.spotify.com/embed/playlist/7mZZkjpyoY83wHbssEtzNF?utm_source=generator&theme=0"
+                            height="352" frameBorder="0" allowfullscreen
+                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                            loading="lazy"></iframe>
+                    </div>
+                </div>
+
+                <!-- Tribute Mix (Artist) -->
+                <div class="playlist-card animate-in" style="transition-delay: 300ms;">
+                    <div class="card-header">
+                        <div class="playlist-icon tribute"><i class="fa-solid fa-heart"></i></div>
+                        <div>
+                            <h3>Zyzz Tribute Mix</h3>
+                            <p>The sounds of the legend. Tevvez and more.</p>
+                        </div>
+                    </div>
+                    <div class="spotify-embed">
+                        <iframe style="border-radius:12px"
+                            src="https://open.spotify.com/embed/artist/06p17yB3xXhP6nlrpEXm4g?utm_source=generator&theme=0"
+                            height="352" frameBorder="0" allowfullscreen
+                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                            loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ===================== FEATURED TRACKS ===================== -->
+    <section class="featured-section section">
+        <div class="container">
+            <div class="section-header animate-in">
+                <span class="section-tag">Essential Tracks</span>
+                <h2>The <span class="text-gold text-glow">Anthem</span> List</h2>
+                <div class="section-line"></div>
+                <p>The tracks that defined the Zyzz era. If you know, you know.</p>
+            </div>
+
+            <div class="tracks-grid">
+                <div class="track-item animate-in">
+                    <span class="track-number">01</span>
+                    <div class="track-info">
+                        <h4>Legend</h4>
+                        <span>Tevvez</span>
+                    </div>
+                    <span class="track-genre">Hardstyle</span>
+                </div>
+
+                <div class="track-item animate-in" style="transition-delay: 50ms;">
+                    <span class="track-number">02</span>
+                    <div class="track-info">
+                        <h4>FTS</h4>
+                        <span>Showtek</span>
+                    </div>
+                    <span class="track-genre">Hardstyle</span>
+                </div>
+
+                <div class="track-item animate-in" style="transition-delay: 100ms;">
+                    <span class="track-number">03</span>
+                    <div class="track-info">
+                        <h4>Dragonborn</h4>
+                        <span>Headhunterz</span>
+                    </div>
+                    <span class="track-genre">Hardstyle</span>
+                </div>
+
+                <div class="track-item animate-in" style="transition-delay: 150ms;">
+                    <span class="track-number">04</span>
+                    <div class="track-info">
+                        <h4>Exploration of Space</h4>
+                        <span>Cosmic Gate</span>
+                    </div>
+                    <span class="track-genre">Trance</span>
+                </div>
+
+                <div class="track-item animate-in" style="transition-delay: 200ms;">
+                    <span class="track-number">05</span>
+                    <div class="track-info">
+                        <h4>In and Out of Love</h4>
+                        <span>Armin van Buuren</span>
+                    </div>
+                    <span class="track-genre">Trance</span>
+                </div>
+
+                <div class="track-item animate-in" style="transition-delay: 250ms;">
+                    <span class="track-number">06</span>
+                    <div class="track-info">
+                        <h4>One (Your Name)</h4>
+                        <span>Swedish House Mafia</span>
+                    </div>
+                    <span class="track-genre">Progressive</span>
+                </div>
+
+                <div class="track-item animate-in" style="transition-delay: 300ms;">
+                    <span class="track-number">07</span>
+                    <div class="track-info">
+                        <h4>Levels</h4>
+                        <span>Avicii</span>
+                    </div>
+                    <span class="track-genre">EDM</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ===================== MUSIC QUOTE ===================== -->
+    <section class="music-quote section">
+        <div class="container animate-in">
+            <blockquote>"You gotta listen to hardstyle while you train, brah. It's the only way."</blockquote>
+            <cite>— Zyzz, on the sacred gym playlist</cite>
+        </div>
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>ZYZZ</h3>
+                <p>A tribute to Aziz Sergeyevich Shavershian (1989–2011). The Father of Aesthetics. Forever mirin'.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navigate</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="mythos.html">The Mythos</a></li>
+                    <li><a href="blueprint.html">The Blueprint</a></li>
+                    <li><a href="vault.html">The Vault</a></li>
+                    <li><a href="audio.html">The Audio</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Community</h4>
+                <ul>
+                    <li><span class="footer-disabled">Discord (Under Construction)</span></li>
+                    <li><a href="https://reddit.com/r/zyzzlegacy" target="_blank">Reddit</a></li>
+                    <li><span class="footer-disabled">Forum (Under Construction)</span></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legacy</h4>
+                <ul>
+                    <li><a href="https://www.youtube.com/@7zyzz765/" target="_blank">Original YouTube</a></li>
+                    <li><a href="https://www.youtube.com/@chestbrah.official/videos" target="_blank">Chestbrah
+                            Channel</a></li>
+                    <li><span class="footer-disabled">Fan Tributes (Under Construction)</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 The Ascension — A Fan Tribute.</p>
+            <div class="footer-socials">
+                <a href="https://www.instagram.com/zyzzforeverr/" target="_blank" aria-label="Instagram"><i
+                        class="fa-brands fa-instagram"></i></a>
+                <a href="#" aria-label="X (Twitter)" title="Under Construction"><i
+                        class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" aria-label="YouTube" title="Under Construction"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#" aria-label="TikTok" title="Under Construction"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/audio-player.js"></script>
+</body>
+
+</html>

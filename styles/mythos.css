@@ -1,0 +1,456 @@
+/* ===================================================================
+   THE MYTHOS — Biography Page
+   3D Scene, RPG Stats, Timeline, Bio
+   =================================================================== */
+
+/* --- 3D Background Container --- */
+#three-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.6;
+    mix-blend-mode: screen;
+}
+
+/* --- Page Hero --- */
+.mythos-hero {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: calc(var(--nav-height) + var(--space-xl)) var(--space-md) var(--space-xl);
+    position: relative;
+    z-index: 1;
+    background: radial-gradient(circle at center, rgba(20, 20, 30, 0.6) 0%, transparent 70%);
+}
+
+.mythos-hero-content {
+    max-width: 800px;
+}
+
+.mythos-hero .page-tag {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: var(--fs-caption);
+    color: var(--accent-cyan);
+    text-transform: uppercase;
+    letter-spacing: 0.4em;
+    margin-bottom: var(--space-sm);
+    padding: 6px 20px;
+    border: 1px solid rgba(0, 229, 255, 0.3);
+    border-radius: 30px;
+}
+
+.mythos-hero h1 {
+    font-size: var(--fs-h1);
+    margin-bottom: var(--space-sm);
+}
+
+.mythos-hero h1 .gold {
+    color: var(--accent-gold);
+    text-shadow: var(--glow-text);
+}
+
+.mythos-hero .subtitle {
+    font-size: var(--fs-body);
+    color: var(--text-secondary);
+    max-width: 650px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* --- Character Stats Section --- */
+.stats-section {
+    position: relative;
+    z-index: 1;
+}
+
+.stats-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
+    align-items: start;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Character Card */
+.character-card {
+    background: rgba(10, 10, 15, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(212, 168, 83, 0.3);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5), inset 0 0 100px rgba(0, 0, 0, 0.8);
+    position: relative;
+}
+
+/* HUD Corner Accents */
+.character-card::before,
+.character-card::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: 2px solid var(--accent-gold);
+    z-index: 2;
+}
+
+.character-card::before {
+    top: -1px;
+    left: -1px;
+    border-right: none;
+    border-bottom: none;
+}
+
+.character-card::after {
+    bottom: -1px;
+    right: -1px;
+    border-left: none;
+    border-top: none;
+}
+
+.character-card-header {
+    padding: var(--space-md);
+    border-bottom: 1px solid rgba(212, 168, 83, 0.2);
+    text-align: center;
+}
+
+.char-name {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--accent-gold);
+    text-shadow: var(--glow-gold);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.char-class {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: var(--fs-small);
+    color: var(--accent-cyan);
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    text-shadow: var(--glow-cyan);
+    margin-top: 4px;
+}
+
+.character-card-body {
+    padding: var(--space-md);
+}
+
+.character-card-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: var(--radius-sm);
+    filter: saturate(0.7) contrast(1.1);
+    margin-bottom: var(--space-md);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Stat Rows */
+.stat-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-sm);
+}
+
+.stat-label {
+    width: 90px;
+    font-family: var(--font-mono);
+    font-size: var(--fs-small);
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.stat-bar-container {
+    flex: 1;
+    height: 14px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transform: skewX(-15deg);
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-bar {
+    height: 100%;
+    width: 0%;
+    background: var(--grad-gold);
+    box-shadow: 0 0 15px rgba(212, 168, 83, 0.5);
+    position: relative;
+    transition: width 1.5s var(--ease-smooth);
+}
+
+/* Colored stat bars */
+.stat-bar.strength {
+    background: linear-gradient(90deg, #8c6a28, #e74c3c);
+}
+
+.stat-bar.aesthetics {
+    background: var(--grad-gold);
+}
+
+.stat-bar.charisma {
+    background: linear-gradient(90deg, #8c6a28, #9b59b6);
+}
+
+.stat-bar.discipline {
+    background: var(--grad-cyan);
+}
+
+.stat-bar.legacy {
+    background: linear-gradient(90deg, #d4a853, #fbe6a8);
+}
+
+/* Glitch effect on bar edge */
+.stat-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 4px;
+    height: 100%;
+    background: #fff;
+    opacity: 0.5;
+}
+
+.stat-value {
+    width: 40px;
+    font-family: var(--font-mono);
+    font-size: var(--fs-body);
+    color: var(--text-primary);
+    font-weight: 700;
+    text-align: right;
+    flex-shrink: 0;
+}
+
+/* Physical Stats */
+.physical-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
+}
+
+.physical-stat {
+    text-align: center;
+    padding: var(--space-md);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: var(--radius-sm);
+    transition: all 0.3s ease;
+}
+
+.physical-stat:hover {
+    border-color: rgba(212, 168, 83, 0.3);
+    background: rgba(212, 168, 83, 0.05);
+}
+
+.stat-number {
+    font-family: var(--font-mono);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 900;
+    color: var(--accent-gold);
+    text-shadow: var(--glow-text);
+    line-height: 1;
+    margin-bottom: 4px;
+}
+
+.stat-desc {
+    font-family: var(--font-body);
+    font-size: var(--fs-caption);
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+}
+
+/* --- Timeline Section --- */
+.timeline-section {
+    padding: var(--space-xl) 0;
+    position: relative;
+    z-index: 1;
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background: linear-gradient(to bottom, transparent, var(--accent-gold), transparent);
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    padding: var(--space-md) 0;
+    position: relative;
+    width: 50%;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+    padding-right: var(--space-lg);
+    text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+    padding-left: var(--space-lg);
+    text-align: left;
+}
+
+/* Dot on center line */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 14px;
+    height: 14px;
+    background: var(--bg-primary);
+    border: 2px solid var(--accent-gold);
+    border-radius: 50%;
+    z-index: 2;
+    transform: translateY(-50%);
+    box-shadow: 0 0 12px rgba(212, 168, 83, 0.4);
+}
+
+.timeline-item:nth-child(odd)::before {
+    right: -8px;
+}
+
+.timeline-item:nth-child(even)::before {
+    left: -8px;
+}
+
+.timeline-year {
+    font-family: var(--font-mono);
+    font-size: var(--fs-h3);
+    color: var(--accent-cyan);
+    margin-bottom: var(--space-xs);
+    text-shadow: var(--glow-cyan);
+}
+
+.timeline-title {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    margin-bottom: var(--space-xs);
+    text-transform: uppercase;
+}
+
+.timeline-desc {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+}
+
+/* Memorial item */
+.timeline-item.memorial {
+    background: rgba(212, 168, 83, 0.05);
+    border-radius: var(--radius-md);
+    padding: var(--space-md);
+}
+
+.timeline-item.memorial::before {
+    border-color: var(--accent-gold);
+    background: var(--accent-gold);
+    box-shadow: 0 0 20px rgba(212, 168, 83, 0.6);
+}
+
+/* --- Biography Section --- */
+.bio-section {
+    padding: var(--space-xl) 0;
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(to bottom, var(--bg-primary), var(--bg-secondary));
+}
+
+.bio-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.bio-content h3 {
+    font-family: var(--font-display);
+    font-size: var(--fs-h3);
+    color: var(--accent-gold);
+    margin-bottom: var(--space-md);
+    text-shadow: var(--glow-text);
+}
+
+.bio-content p {
+    font-size: 1.05rem;
+    line-height: 1.9;
+    margin-bottom: var(--space-md);
+    color: var(--text-secondary);
+}
+
+.highlight-box {
+    border-left: 3px solid var(--accent-gold);
+    padding: var(--space-md) var(--space-md);
+    margin: var(--space-lg) 0;
+    background: rgba(212, 168, 83, 0.05);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+.highlight-box p {
+    font-family: var(--font-display);
+    font-style: italic;
+    color: var(--accent-gold-light);
+    font-size: var(--fs-h3);
+    margin: 0;
+    text-shadow: 0 0 15px rgba(212, 168, 83, 0.15);
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+    .stats-container {
+        grid-template-columns: 1fr;
+    }
+
+    .physical-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .timeline::before {
+        left: 20px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 50px !important;
+        padding-right: 0 !important;
+        text-align: left !important;
+    }
+
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even) {
+        left: 0;
+    }
+
+    .timeline-item::before {
+        left: 12px !important;
+        right: auto !important;
+    }
+}
