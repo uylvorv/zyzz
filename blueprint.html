@@ -610,8 +610,18 @@
         // Update wiki nav on scroll
         const wikiSections = document.querySelectorAll('.training-section, .diet-section, .supps-section, .philosophy-banner');
         const wikiLinks = document.querySelectorAll('.wiki-nav a');
-
+        const wikiNav = document.querySelector('.wiki-nav');
         window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+            // Hide Wiki Nav if not at top (scrolled > 100px)
+            if (currentScroll > 100) {
+                wikiNav.classList.add('nav-hidden');
+            } else {
+                wikiNav.classList.remove('nav-hidden');
+            }
+
+            // Existing Active Link Logic
             let current = '';
             wikiSections.forEach(section => {
                 const rect = section.getBoundingClientRect();
